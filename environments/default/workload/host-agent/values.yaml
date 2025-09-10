@@ -94,7 +94,7 @@ basic-app:
         pathType: Prefix
 
   autoscaling:
-    enabled: true
+    enabled: false
     minReplicas: 1
     maxReplicas: 10
     targetCPUUtilizationPercentage: 75
