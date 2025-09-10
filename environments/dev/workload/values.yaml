@@ -5,6 +5,8 @@ config:
     destination:
       server: https://kubernetes.default.svc
       namespace: default
+    source: 
+      targetRevision: dev
 
 applications:
   - name: host-agent

@@ -1,10 +1,12 @@
-# config:
-#   spec:
-#     workload: 
-#       serviceAccountName: "apps-default-sa"
-#     destination:
-#       server: https://kubernetes.default.svc
-#       namespace: default
+config:
+  spec:
+    # workload: 
+    #   serviceAccountName: "apps-default-sa"
+    # destination:
+    #   server: https://kubernetes.default.svc
+    #   namespace: default
+    source: 
+      targetRevision: disc
 
 # applications:
 #   - name: host-agent

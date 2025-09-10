@@ -1,19 +1,17 @@
-config:
-  spec:
-    # workload: 
-    #   serviceAccountName: "apps-default-sa"
-    # destination:
-    #   server: https://kubernetes.default.svc
-    #   namespace: default
-    source: 
-      targetRevision: main
+# config:
+#   spec:
+#     workload: 
+#       serviceAccountName: "apps-default-sa"
+#     destination:
+#       server: https://kubernetes.default.svc
+#       namespace: default
 
-# applications:
-#   - name: host-agent
-#     source:
-#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-host-agent.git
-#       targetRevision: main
-#       path: k8s
+applications:
+  - name: host-agent
+    source:
+      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-host-agent.git
+      # targetRevision: main
+      path: k8s
 #   - name: qa-a2a-server
 #     source:
 #       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-a2a-server.git
