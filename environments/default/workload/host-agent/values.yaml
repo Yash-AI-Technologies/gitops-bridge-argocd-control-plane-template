@@ -25,8 +25,8 @@ basic-app:
 
   ports:
   - name: http
-    servicePort: 8080
-    containerPort: 8080
+    servicePort: 8000
+    containerPort: 8000
 
   envFrom:
   - secretRef:
@@ -79,7 +79,7 @@ basic-app:
     hostname:
       appdomain: hostagent
       # domain: prod.yashtechai.link   # cluster set this value at runtime
-    servicePort: 8080
+    servicePort: 8000
     className: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
