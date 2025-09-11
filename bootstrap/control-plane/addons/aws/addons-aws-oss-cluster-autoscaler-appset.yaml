@@ -39,6 +39,12 @@ spec:
           - clusters:
               selector:
                 matchLabels:
+                  kubernetes_version: '1.33'
+              values:
+                clusterAutoScalerImageTag: v1.33.0
+          - clusters:
+              selector:
+                matchLabels:
                   kubernetes_version: '1.28'
               values:
                 clusterAutoScalerImageTag: v1.28.0

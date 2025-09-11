@@ -1,0 +1,46 @@
+# config:
+#   spec:
+#     workload: 
+#       serviceAccountName: "apps-default-sa"
+#     destination:
+#       server: https://kubernetes.default.svc
+#       namespace: default
+
+applications:
+  - name: host-agent
+    source:
+      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-host-agent.git
+      # targetRevision: main
+      path: helm
+#   - name: qa-a2a-server
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-a2a-server.git
+#       targetRevision: main
+#       path: helm
+#   - name: qa-backend
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-backend.git
+#       targetRevision: main
+#       path: helm
+#   - name: middleware
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-middleware.git
+#       targetRevision: main
+#       path: helm
+#   - name: discovery-a2a-server
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-discovery-a2a-server.git
+#       targetRevision: main
+#       path: helm
+#   - name: discovery-backend
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-discovery-backend.git
+#       targetRevision: main
+#       path: helm
+#   - name: prompt-enhancer
+#     source:
+#       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-prompt-enhancer.git
+#       targetRevision: main
+#       path: helm
+      
+    
