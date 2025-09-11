@@ -35,26 +35,30 @@ basic-app:
         name: gemini-config-secret
     - secretRef:
         name: tiktoken-config-secret
+    - secretRef:
+        name: otel-config-secret
   env:
     - name: SERVER_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME
-      value: "HOST_AGENT"
+      value: "QA_BACKEND"
     - name: AGENT_NAME_CONSTANT
-      value: "HOST_AGENT"
+      value: "QA_AGENT"
+    - name: AGENT_NAME
+      value: "QA_AGENT"
+    - name: OTEL_RESOURCE_ATTRIBUTES
+      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-qa-backend"
 
   resources:
-    limits:
-      cpu: "20m"
-      memory: "800Mi"
     requests:
-      cpu: "50m"
-      memory: "2048Mi"
+      cpu: "10m"                # Minimum CPU guaranteed
+      memory: "800Mi"            # Minimum memory guaranteed
+    limits:
+      cpu: "50m"                # Max CPU allowed
+      memory: "1024Mi"            # Max memory allowed
 
   ingress:
     enabled: true
     hostname:
-      appdomain: hostagent
+      appdomain: api-qa
       # domain: prod.yashtechai.link   # cluster set this value at runtime
     servicePort: 8000
     className: nginx

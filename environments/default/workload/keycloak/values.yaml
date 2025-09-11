@@ -25,38 +25,40 @@ basic-app:
 
   ports:
   - name: http
-    servicePort: 8000
-    containerPort: 8000
+    servicePort: 8080
+    containerPort: 8080
 
   envFrom:
     - secretRef:
-        name: aws-config-secret
-    - secretRef:
-        name: gemini-config-secret
-    - secretRef:
-        name: tiktoken-config-secret
+        name: keycloak-credentials-config-secret
   env:
-    - name: SERVER_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME_CONSTANT
-      value: "HOST_AGENT"
+    - name: PROXY_ADDRESS_FORWARDING
+      value: "true"
+    - name: KEYCLOAK_FRONTEND_URL
+      value: "https://iam.yashtechai.link"
+    - name: KC_HOSTNAME
+      value: iam.yashtechai.link
+    - name: KC_HOSTNAME_STRICT
+      value: "false"
+    - name: KC_HTTP_ENABLED
+      value: "true"
+    - name: KC_PROXY
+      value: "edge"
 
   resources:
-    limits:
-      cpu: "20m"
-      memory: "800Mi"
     requests:
-      cpu: "50m"
-      memory: "2048Mi"
+      cpu: "10m"                # Minimum CPU guaranteed
+      memory: "1024Mi"            # Minimum memory guaranteed
+    limits:
+      cpu: "50m"                # Max CPU allowed
+      memory: "4096Mi"            # Max memory allowed
 
   ingress:
     enabled: true
     hostname:
-      appdomain: hostagent
+      appdomain: iam
       # domain: prod.yashtechai.link   # cluster set this value at runtime
-    servicePort: 8000
+    servicePort: 8080
     className: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod

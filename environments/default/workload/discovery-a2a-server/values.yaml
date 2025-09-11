@@ -25,8 +25,8 @@ basic-app:
 
   ports:
   - name: http
-    servicePort: 8000
-    containerPort: 8000
+    servicePort: 5000
+    containerPort: 5000
 
   envFrom:
     - secretRef:
@@ -36,27 +36,41 @@ basic-app:
     - secretRef:
         name: tiktoken-config-secret
   env:
-    - name: SERVER_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME_CONSTANT
-      value: "HOST_AGENT"
+    - name: "DISCOVERY_PORT"
+      value: "5000"
+    - name: "DISCOVERY_BACKEND_URL"
+      value: "discovery-a2a-server-service.default.svc"
+    - name: "HOST"
+      value: "discovery-a2a-server-service.default.svc"
+    - name: "TEMP_PATH"
+      value: "temp"
+    - name: "BASE_URL"
+      value: "http://discovery-backend-service.default.svc:8000"
+    - name: "DISCOVERY_BACKEND_URL"
+      value: "http://discovery-backend-service.default.svc:8000"
+    - name: "SERVER_NAME"
+      value: "DISCOVERY_A2A"
+    - name: "AGENT_NAME_CONSTANT"
+      value: "DISCOVERY_AGENT"
+    - name: "AGENT_NAME"
+      value: "DISCOVERY_AGENT"
+    - name: "OTEL_RESOURCE_ATTRIBUTES"
+      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-discovery-a2a"
 
   resources:
-    limits:
-      cpu: "20m"
-      memory: "800Mi"
     requests:
-      cpu: "50m"
-      memory: "2048Mi"
+      cpu: "10m"                # Minimum CPU guaranteed
+      memory: "300Mi"            # Minimum memory guaranteed
+    limits:
+      cpu: "50m"                # Max CPU allowed
+      memory: "1024Mi"            # Max memory allowed
 
   ingress:
     enabled: true
     hostname:
-      appdomain: hostagent
+      appdomain: discovery-a2a
       # domain: prod.yashtechai.link   # cluster set this value at runtime
-    servicePort: 8000
+    servicePort: 5000
     className: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod

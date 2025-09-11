@@ -30,31 +30,49 @@ basic-app:
 
   envFrom:
     - secretRef:
-        name: aws-config-secret
-    - secretRef:
         name: gemini-config-secret
     - secretRef:
+        name: azure-openai-config-secret
+    - secretRef:
         name: tiktoken-config-secret
+    - secretRef:
+        name: keycloak-config-secret
+    - secretRef:
+        name: otel-config-secret
   env:
-    - name: SERVER_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME
-      value: "HOST_AGENT"
-    - name: AGENT_NAME_CONSTANT
-      value: "HOST_AGENT"
+    - name: "PORT"
+      value: "8000"
+    - name: "KEYCLOAK_CLIENT_ID"
+      value: "unified_a2a_app"
+    - name: "KEYCLOAK_ADMIN_CLIENT_ID"
+      value: "unified_a2a_admin_app"
+    - name: "GEMINI_MODEL"
+      value: "gemini-2.5-flash"
+    - name: "MODEL_PROVIDER"
+      value: "gemini"
+    - name: "HOST_AGENT_NAME"
+      value: "PROMPT_ENHANCER"
+    - name: "SERVER_NAME"
+      value: "PROMPT_ENHANCER"
+    - name: "AGENT_NAME"
+      value: "PROMPT_ENHANCER_AGENT"
+    - name: "AGENT_NAME_CONSTANT"
+      value: "PROMPT_ENHANCER_AGENT"
+    - name: "OPENAI_MODEL"
+      value: "gpt-4o-mini"
 
   resources:
-    limits:
-      cpu: "20m"
-      memory: "800Mi"
     requests:
-      cpu: "50m"
-      memory: "2048Mi"
+      cpu: "10m"                # Minimum CPU guaranteed
+      memory: "400Mi"            # Minimum memory guaranteed
+    limits:
+      cpu: "50m"                # Max CPU allowed
+      memory: "10240Mi"            # Max memory allowed
 
   ingress:
     enabled: true
     hostname:
-      appdomain: hostagent
+      appdomain: prompt-enhancer
       # domain: prod.yashtechai.link   # cluster set this value at runtime
     servicePort: 8000
     className: nginx
