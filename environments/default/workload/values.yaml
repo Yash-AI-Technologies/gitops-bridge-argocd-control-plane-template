@@ -11,10 +11,10 @@ applications:
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-host-agent.git
       path: helm
-  # - name: qa-a2a-server
-  #   source:
-  #     repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-a2a-server.git
-  #     path: helm
+  - name: qa-a2a-server
+    source:
+      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-a2a-server.git
+      path: helm
   # - name: qa-backend
   #   source:
   #     repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-backend.git
