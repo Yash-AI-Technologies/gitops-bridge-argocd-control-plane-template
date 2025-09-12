@@ -44,10 +44,10 @@ basic-app:
       value: "HOST_AGENT"
 
   resources:
-    limits:
+    requests:
       cpu: "20m"
       memory: "800Mi"
-    requests:
+    limits:
       cpu: "50m"
       memory: "2048Mi"
 
