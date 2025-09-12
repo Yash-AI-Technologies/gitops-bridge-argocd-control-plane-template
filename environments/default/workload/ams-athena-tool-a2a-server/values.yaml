@@ -80,7 +80,6 @@ basic-app:
       - path: /
         pathType: Prefix
 
-
   autoscaling:
     enabled: true
     minReplicas: 1
