@@ -10,112 +10,90 @@ applications:
   - name: host-agent
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-host-agent.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: qa-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: qa-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: middleware
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-middleware.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: discovery-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-discovery-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: discovery-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-discovery-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: prompt-enhancer
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-prompt-enhancer.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: code-migration-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-migration-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: code-migration-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-migration-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: code-generator-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-generator-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: code-generator-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-generator-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: ams-athena-tool-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-ams-athena-tool-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: ams-athena-tool-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-ams-athena-tool-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: rfp-analysis-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-rfp-analysis-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: rfp-analysis-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-rfp-analysis-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: qa-unit-test-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-unit-test-a2a-server.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: qa-unit-test-backend
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-unit-test-backend.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: otel
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-otel.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: grafana
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-grafana.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: kafka
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-kafka.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: kafka-consumer
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-kafka-consumer.git
-      targetRevision: dev
-      path: k8s
+      path: helm
   - name: keycloak
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-keycloak.git
-      targetRevision: dev
-      path: k8s
+      path: helm
       
     
