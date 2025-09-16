@@ -35,7 +35,7 @@ basic-app:
         name: gemini-config-secret
     - secretRef:
         name: tiktoken-config-secret
-     - secretRef:
+    - secretRef:
         name: hostagent-db-config-secret
   env:
     - name: SERVER_NAME
