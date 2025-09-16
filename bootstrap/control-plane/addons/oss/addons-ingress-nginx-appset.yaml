@@ -60,6 +60,7 @@ spec:
               controller:
                 service:
                   type: {{default "LoadBalancer" .metadata.annotations.ingress_nginx_service_type}}
+                  loadBalancerClass: ""
                   annotations:
                     service.beta.kubernetes.io/aws-load-balancer-type: {{default "nlb" .metadata.annotations.ingress_nginx_loadbalancer_type}}
                     service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
