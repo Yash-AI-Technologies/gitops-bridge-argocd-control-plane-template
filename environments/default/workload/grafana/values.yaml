@@ -41,7 +41,7 @@ basic-app:
     - name: "GF_DATABASE_SSL_MODE"
       value: "require"
     - name: "GF_SERVER_ROOT_URL"
-      value: "https://grafana.yashtechai.link"
+      value: "https://grafana.aifirstenterprise.ai"
     - name: "GF_INSTALL_PLUGINS"
       value: "grafana-x-ray-datasource"
 
