@@ -50,7 +50,7 @@ basic-app:
       cpu: "100m"                # Minimum CPU guaranteed
       memory: "1024Mi"            # Minimum memory guaranteed
     limits:
-      cpu: "150m"                # Max CPU allowed
+      cpu: "2000m"                # Max CPU allowed
       memory: "4096Mi"            # Max memory allowed
 
   ingress:
@@ -75,9 +75,9 @@ basic-app:
   autoscaling:
     enabled: false
     minReplicas: 1
-    maxReplicas: 5
-    targetCPUUtilizationPercentage: 75
-    targetMemoryUtilizationPercentage: 80
+    maxReplicas: 1
+    targetCPUUtilizationPercentage: 90
+    targetMemoryUtilizationPercentage: 90
 
 
   livenessProbe: {}
