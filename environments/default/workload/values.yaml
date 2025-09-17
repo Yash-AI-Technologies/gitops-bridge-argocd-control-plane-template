@@ -91,9 +91,9 @@ applications:
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-kafka-consumer.git
       path: helm
-  - name: keycloak
-    source:
-      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-keycloak.git
-      path: helm
+  # - name: keycloak
+  #   source:
+  #     repoURL: git@github.com:Yash-AI-Technologies/yash-unified-keycloak.git
+  #     path: helm
       
     
