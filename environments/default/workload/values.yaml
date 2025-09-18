@@ -19,10 +19,10 @@ applications:
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-qa-backend.git
       path: helm
-  # - name: middleware
-  #   source:
-  #     repoURL: git@github.com:Yash-AI-Technologies/yash-unified-middleware.git
-  #     path: helm
+  - name: middleware
+    source:
+      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-middleware.git
+      path: helm
   - name: discovery-a2a-server
     source:
       repoURL: git@github.com:Yash-AI-Technologies/yash-unified-discovery-a2a-server.git
