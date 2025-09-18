@@ -37,13 +37,13 @@ basic-app:
         name: tiktoken-config-secret
   env:
     - name: "HOST"
-      value: "ams-athena-tool-a2a-server-service.default.svc"
+      value: "ams-athena-tool-a2a-server-svc.default.svc"
     - name: "TEMP_PATH"
       value: "../../../temp/"
     - name: "ATHENA_PORT"
       value: "5000"
     - name: "ATHENA_BACKEND"
-      value: "http://ams-athena-tool-backend-service.default.svc:8000"
+      value: "http://ams-athena-tool-backend-svc.default.svc:8000"
     - name: "SERVER_NAME"
       value: "AMS_ATHENA_A2A"
     - name: "AGENT_NAME_CONSTANT"

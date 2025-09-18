@@ -43,7 +43,7 @@ basic-app:
     - name: "QA_TEST_CASE_BACKEND_PORT"
       value: "8000"
     - name: "QA_TEST_CASE_BACKEND_HOST"
-      value: "qa-unit-test-backend-service.default.svc"
+      value: "qa-unit-test-backend-svc.default.svc"
     - name: "SERVER_NAME"
       value: "QA_UNIT_TEST_BACKEND"
     - name: "AGENT_NAME_CONSTANT"

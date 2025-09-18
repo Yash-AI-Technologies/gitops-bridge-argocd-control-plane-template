@@ -37,7 +37,7 @@ basic-app:
         name: tiktoken-config-secret
   env:
     - name: "HOST"
-      value: "qa-unit-test-a2a-server-service.default.svc"
+      value: "qa-unit-test-a2a-server-svc.default.svc"
     - name: "TEMP_PATH"
       value: "../../../temp/"
     - name: "SERVER_NAME"
@@ -49,7 +49,7 @@ basic-app:
     - name: "QA_UNIT_TEST_PORT"
       value: "5000"
     - name: "QA_UNIT_TEST_BACKEND"
-      value: "http://qa-unit-test-backend-service.default.svc:8000"
+      value: "http://qa-unit-test-backend-svc.default.svc:8000"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
       value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-qa-unit-test-a2a"
 
