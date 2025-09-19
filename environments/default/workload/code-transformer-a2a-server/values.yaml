@@ -37,26 +37,28 @@ basic-app:
         name: tiktoken-config-secret
   env:
     - name: "HOST"
-      value: "qa-a2a-server-svc.default.svc"
-    - name: "QA_PORT"
+      value: "code-transformer-a2a-server-svc.default.svc"
+    - name: "TEMP_PATH"
+      value: "../temp/"
+    - name: "TRANSFORMER_PORT"
       value: "5000"
-    - name: "QA_TOOL_BASE_URL"
-      value: "http://qa-backend-svc.default.svc:8000"
-    - name: "QA_BACKEND_URL"
-      value: "http://qa-backend-svc.default.svc:8000"
+    - name: "TRANSFORMER_BACKEND"
+      value: "http://code-transformer-backend-svc.default.svc:8000"
     - name: "SERVER_NAME"
-      value: "QA_A2A"
+      value: "CODE_TRANSFORMER_A2A"
     - name: "AGENT_NAME_CONSTANT"
-      value: "QA_AGENT"
+      value: "CODE_TRANSFORMER_AGENT"
     - name: "AGENT_NAME"
-      value: "QA_AGENT"
+      value: "CODE_TRANSFORMER_AGENT"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
-      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-qa-a2a"
+      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-transformer-a2a"
 
   resources:
     requests:
       cpu: "10m"                # Minimum CPU guaranteed
-      memory: "350Mi"            # Minimum memory guaranteed
+      memory: "300Mi"            # Minimum memory guaranteed
     limits:
       cpu: "50m"                # Max CPU allowed
       memory: "1024Mi"            # Max memory allowed
@@ -64,7 +66,7 @@ basic-app:
   ingress:
     enabled: true
     hostname:
-      appdomain: qa-a2a
+      appdomain: code-transformer-a2a
       # domain: prod.yashtechai.link   # cluster set this value at runtime
     servicePort: 5000
     className: nginx

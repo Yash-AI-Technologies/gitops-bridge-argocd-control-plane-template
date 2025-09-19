@@ -47,7 +47,7 @@ basic-app:
     - name: "KEYCLOAK_ADMIN_CLIENT_ID"
       value: "unified_a2a_admin_app"
     - name: "GEMINI_MODEL"
-      value: "gemini-2.5-flash"
+      value: "gemini-2.5-flash-lite"
     - name: "MODEL_PROVIDER"
       value: "gemini"
     - name: "HOST_AGENT_NAME"
@@ -91,7 +91,7 @@ basic-app:
   autoscaling:
     enabled: true
     minReplicas: 1
-    maxReplicas: 5
+    maxReplicas: 1
     targetCPUUtilizationPercentage: 75
     targetMemoryUtilizationPercentage: 80
 

@@ -41,7 +41,7 @@ basic-app:
         name: otel-config-secret
   env:
     - name: "HOST"
-      value: "code-generator-backend-service.default.svc"
+      value: "code-generator-backend-svc.default.svc"
     - name: "PORT"
       value: "8000"
     - name: "SERVER_NAME"

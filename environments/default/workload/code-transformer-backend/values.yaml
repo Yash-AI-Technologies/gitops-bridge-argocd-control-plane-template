@@ -25,8 +25,8 @@ basic-app:
 
   ports:
   - name: http
-    servicePort: 5000
-    containerPort: 5000
+    servicePort: 8000
+    containerPort: 8000
 
   envFrom:
     - secretRef:
@@ -35,28 +35,32 @@ basic-app:
         name: gemini-config-secret
     - secretRef:
         name: tiktoken-config-secret
+    - secretRef:
+        name: keycloak-config-secret
+    - secretRef:
+        name: otel-config-secret
   env:
-    - name: "HOST"
-      value: "qa-a2a-server-svc.default.svc"
-    - name: "QA_PORT"
-      value: "5000"
-    - name: "QA_TOOL_BASE_URL"
-      value: "http://qa-backend-svc.default.svc:8000"
-    - name: "QA_BACKEND_URL"
-      value: "http://qa-backend-svc.default.svc:8000"
+    - name: "LLM_RETRIES"
+      value: "3"
+    - name: "LLM_RETRY_DELAY_SECONDS"
+      value: "5"
+    - name: "PORT"
+      value: "8000"
     - name: "SERVER_NAME"
-      value: "QA_A2A"
+      value: "CODE_TRANSFORMER_BACKEND"
     - name: "AGENT_NAME_CONSTANT"
-      value: "QA_AGENT"
+      value: "CODE_TRANSFORMER_AGENT"
     - name: "AGENT_NAME"
-      value: "QA_AGENT"
+      value: "CODE_TRANSFORMER_AGENT"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
-      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-qa-a2a"
+      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-transformer-backend"
 
   resources:
     requests:
       cpu: "10m"                # Minimum CPU guaranteed
-      memory: "350Mi"            # Minimum memory guaranteed
+      memory: "600Mi"            # Minimum memory guaranteed
     limits:
       cpu: "50m"                # Max CPU allowed
       memory: "1024Mi"            # Max memory allowed
@@ -64,9 +68,9 @@ basic-app:
   ingress:
     enabled: true
     hostname:
-      appdomain: qa-a2a
+      appdomain: api-code-transformer
       # domain: prod.yashtechai.link   # cluster set this value at runtime
-    servicePort: 5000
+    servicePort: 8000
     className: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod

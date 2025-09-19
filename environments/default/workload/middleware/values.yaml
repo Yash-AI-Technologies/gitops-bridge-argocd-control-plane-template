@@ -46,10 +46,10 @@ basic-app:
     - secretRef:
         name: otel-config-secret
   env:
-    - name: "TARGET_API_BASE"
-      value: "https://hostagent.yashtechai.link"
-    - name: "TARGET_API_PROMPT_ENHANCER"
-      value: "https://prompt-enhancer.yashtechai.link"
+    # - name: "TARGET_API_BASE"
+    #   value: "https://hostagent.yashtechai.link"
+    # - name: "TARGET_API_PROMPT_ENHANCER"
+    #   value: "https://prompt-enhancer.yashtechai.link"
     - name: "KEYCLOAK_CLIENT_ID"
       value: "unified_a2a_app"
     - name: "GRAPH_API_URL"
@@ -87,7 +87,7 @@ basic-app:
   autoscaling:
     enabled: true
     minReplicas: 1
-    maxReplicas: 5
+    maxReplicas: 1
     targetCPUUtilizationPercentage: 75
     targetMemoryUtilizationPercentage: 80
 
