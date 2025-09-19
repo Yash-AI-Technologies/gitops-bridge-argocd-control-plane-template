@@ -77,9 +77,9 @@ basic-app:
     enabled: true
     minReplicas: 1
     maxReplicas: 1
+
     targetCPUUtilizationPercentage: 90
     targetMemoryUtilizationPercentage: 90
-
 
   livenessProbe: {}
     # httpGet:
