@@ -4,7 +4,7 @@ Control Plane repository defines the desired state of shared infrastructure comp
 
 This git repository is part of the project [GitOps Bridge](https://github.com/gitops-bridge-dev/gitops-bridge)
 
-Repository contains the following directories:
+Repository contains the following directories: 1
 
 * **bootstrap/workloads** - This bootstrap uses App of Apps to deploy Application Sets, defines what resources need to be install in all clusters that are not a control plane cluster running ArgoCD.
 * **bootstrap/control-plane** - This bootstrap uses App of Apps to deploy Application Sets. Apply this bootstrap into a control plane cluster that is running an management tools like ArgoCD, defines what resource need to be install on this cluster, the cluster by convention needs to be name "in-cluster", this makes it compatible with ArgoCD SaaS like Akuity Platform. If using ArgoCD SaaS do not deploy this bootstrap.
