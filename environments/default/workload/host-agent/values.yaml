@@ -56,7 +56,7 @@ basic-app:
       memory: "2048Mi"
 
   ingress:
-    enabled: true
+    enabled: false
     hostname:
       appdomain: hostagent
       # domain: prod.yashtechai.link   # cluster set this value at runtime

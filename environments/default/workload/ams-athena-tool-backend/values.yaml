@@ -68,7 +68,7 @@ basic-app:
       memory: "1024Mi"            # Max memory allowed
 
   ingress:
-    enabled: true
+    enabled: false
     hostname:
       appdomain: api-ams-athena
       # domain: prod.yashtechai.link   # cluster set this value at runtime
