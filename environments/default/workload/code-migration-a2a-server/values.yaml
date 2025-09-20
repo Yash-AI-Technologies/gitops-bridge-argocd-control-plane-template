@@ -50,6 +50,8 @@ basic-app:
       value: "CODE_MIGRATION_AGENT"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
       value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-migration-a2a"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash-lite"
 
   resources:
     requests:

@@ -51,7 +51,7 @@ basic-app:
     - name: "AGENT_NAME"
       value: "CODE_TRANSFORMER_AGENT"
     - name: "MODEL_NAME"
-      value: "gemini-2.5-flash"
+      value: "gemini-2.5-flash-lite"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
       value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-transformer-a2a"
 
