@@ -39,6 +39,8 @@ basic-app:
         name: keycloak-config-secret
     - secretRef:
         name: otel-config-secret
+    - secretRef:
+        name: azure-openai-config-secret
   env:
     - name: "TEMP_DATA_DIR"
       value: "temp_data/"
