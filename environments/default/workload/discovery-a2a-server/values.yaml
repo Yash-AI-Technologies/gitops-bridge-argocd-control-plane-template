@@ -38,8 +38,6 @@ basic-app:
   env:
     - name: "DISCOVERY_PORT"
       value: "5000"
-    - name: "DISCOVERY_BACKEND_URL"
-      value: "discovery-a2a-server-svc.default.svc"
     - name: "HOST"
       value: "discovery-a2a-server-svc.default.svc"
     - name: "TEMP_PATH"
