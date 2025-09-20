@@ -56,6 +56,8 @@ basic-app:
       value: "CODE_REFACTORING_AGENT"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
       value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-migration-backend"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash-lite"
 
   resources:
     requests:

@@ -60,6 +60,8 @@ basic-app:
       value: "PROMPT_ENHANCER_AGENT"
     - name: "OPENAI_MODEL"
       value: "gpt-4o-mini"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash-lite"
 
   resources:
     requests:

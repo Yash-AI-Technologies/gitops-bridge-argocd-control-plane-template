@@ -56,6 +56,8 @@ basic-app:
       value: "AMS_ATHENA_AGENT"
     - name: "OTEL_RESOURCE_ATTRIBUTES"
       value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-ams-athena-backend"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash-lite"
 
   resources:
     requests:
