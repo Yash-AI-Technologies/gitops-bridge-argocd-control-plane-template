@@ -43,7 +43,7 @@ basic-app:
     - name: "TEMP_DATA_DIR"
       value: "temp_data/"
     - name: "GEMINI_MODEL_NAME"
-      value: "models/gemini-2.5-flash-preview-05-20"
+      value: "models/gemini-2.5-flash-lite"
     - name: "EMBEDDING_MODEL_NAME"
       value: "models/gemini-embedding-001"
     - name: "SERVER_NAME"
