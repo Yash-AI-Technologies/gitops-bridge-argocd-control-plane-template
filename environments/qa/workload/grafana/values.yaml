@@ -27,6 +27,9 @@ basic-app:
   - name: http
     servicePort: 3000
     containerPort: 3000
+  - name: grafana
+    servicePort: 3000
+    containerPort: 3000
 
   envFrom:
     - secretRef:
