@@ -27,7 +27,7 @@ basic-app:
   - name: http
     servicePort: 3000
     containerPort: 3000
-  - name: grafana
+  - name: grafana-svc
     servicePort: 3000
     containerPort: 3000
 
