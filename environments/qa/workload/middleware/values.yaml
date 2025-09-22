@@ -66,7 +66,7 @@ basic-app:
       memory: "2048Mi"            # Max memory allowed
 
   ingress:
-    enabled: false
+    enabled: true
     hostname:
       appdomain: api-agentspace
       # domain: prod.yashtechai.link   # cluster set this value at runtime

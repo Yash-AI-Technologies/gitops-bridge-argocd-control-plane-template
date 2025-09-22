@@ -72,7 +72,7 @@ basic-app:
       memory: "10240Mi"            # Max memory allowed
 
   ingress:
-    enabled: false
+    enabled: true
     hostname:
       appdomain: prompt-enhancer
       # domain: prod.yashtechai.link   # cluster set this value at runtime
