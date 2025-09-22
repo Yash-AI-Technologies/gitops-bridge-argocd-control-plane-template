@@ -54,7 +54,7 @@ basic-app:
       memory: "2048Mi"            # Max memory allowed
 
   ingress:
-    enabled: true
+    enabled: false
     hostname:
       appdomain: grafana
       # domain: prod.yashtechai.link   # cluster set this value at runtime

@@ -54,7 +54,7 @@ basic-app:
       memory: "4096Mi"            # Max memory allowed
 
   ingress:
-    enabled: true
+    enabled: false
     hostname:
       appdomain: iam
       # domain: prod.yashtechai.link   # cluster set this value at runtime
