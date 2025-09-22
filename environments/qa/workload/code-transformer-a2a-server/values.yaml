@@ -1,0 +1,113 @@
+# global:
+#   namespace: default
+#   secretStoreRef:
+#     name: "cluster-secret-store"
+#     kind: ClusterSecretStore
+
+# externalSecrets:
+#   - name: tiktoken-test-credentials
+#     # target:
+#     #   name: tiktoken-test-secret
+#     #   creationPolicy: Owner
+#     dataFrom:
+#       - extractKey: "tiktoken-config"  
+
+basic-app:
+  # appName: host-agent   # cluster set this value at runtime
+  serviceAccount: 
+    create: false 
+    # name: mcp-poc  # cluster set this value at runtime
+
+  replicaCount: 1
+
+  # image: 042889969014.dkr.ecr.us-east-1.amazonaws.com/host_agent:20250909181710   # this value will come from application repo
+  imagePullPolicy: IfNotPresent
+
+  ports:
+  - name: http
+    servicePort: 5000
+    containerPort: 5000
+
+  envFrom:
+    - secretRef:
+        name: aws-config-secret
+    - secretRef:
+        name: gemini-config-secret
+    - secretRef:
+        name: tiktoken-config-secret
+  env:
+    - name: "HOST"
+      value: "code-transformer-a2a-server-svc.default.svc"
+    - name: "TEMP_PATH"
+      value: "../temp/"
+    - name: "TRANSFORMER_PORT"
+      value: "5000"
+    - name: "TRANSFORMER_BACKEND"
+      value: "http://code-transformer-backend-svc.default.svc:8000"
+    - name: "SERVER_NAME"
+      value: "CODE_TRANSFORMER_A2A"
+    - name: "AGENT_NAME_CONSTANT"
+      value: "CODE_TRANSFORMER_AGENT"
+    - name: "AGENT_NAME"
+      value: "CODE_TRANSFORMER_AGENT"
+    - name: "MODEL_NAME"
+      value: "gemini-2.5-flash-lite"
+    - name: "OTEL_RESOURCE_ATTRIBUTES"
+      value: "service.version=1.0.0,service.instance.id=llm-service-yash-unified-code-transformer-a2a"
+
+  resources:
+    requests:
+      cpu: "10m"                # Minimum CPU guaranteed
+      memory: "300Mi"            # Minimum memory guaranteed
+    limits:
+      cpu: "50m"                # Max CPU allowed
+      memory: "1024Mi"            # Max memory allowed
+
+  ingress:
+    enabled: false
+    hostname:
+      appdomain: code-transformer-a2a
+      # domain: prod.yashtechai.link   # cluster set this value at runtime
+    servicePort: 5000
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: "500m"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
+    tls: true
+    paths:
+      - path: /
+        pathType: Prefix
+
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 1
+    targetCPUUtilizationPercentage: 75
+    targetMemoryUtilizationPercentage: 80
+
+
+  livenessProbe: {}
+    # httpGet:
+    #   path: /
+    #   port: http
+    # initialDelaySeconds: 10
+    # periodSeconds: 5
+
+  readinessProbe: {}
+    # httpGet:
+    #   path: /
+    #   port: http
+    # initialDelaySeconds: 5
+    # periodSeconds: 3
+
+  podSecurityContext: {}
+  securityContext: {}
+
+  imagePullSecrets: []
+  nodeSelector: {}
+  affinity: {}
+  tolerations: []
