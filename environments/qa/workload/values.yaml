@@ -47,11 +47,11 @@ applications:
       path: helm
   - name: code-transformer-a2a-server
     source:
-      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-transformer-a2a-server.git
+      repoURL: https://github.com/Yash-AI-Technologies/yash-unified-code-transformer-a2a-server.git
       path: helm
   - name: code-transformer-backend
     source:
-      repoURL: git@github.com:Yash-AI-Technologies/yash-unified-code-transformer-backend.git
+      repoURL: https://github.com/Yash-AI-Technologies/yash-unified-code-transformer-backend.git
       path: helm
   - name: code-generator-a2a-server
     source:
