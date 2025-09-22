@@ -24,9 +24,6 @@ basic-app:
   imagePullPolicy: IfNotPresent
 
   ports:
-  - name: http
-    servicePort: 3000
-    containerPort: 3000
   - name: grafana-svc
     servicePort: 3000
     containerPort: 3000
