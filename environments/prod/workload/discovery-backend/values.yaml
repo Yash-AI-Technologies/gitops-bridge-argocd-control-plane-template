@@ -18,7 +18,7 @@ basic-app:
     create: false 
     # name: mcp-poc  # cluster set this value at runtime
 
-  replicaCount: 1
+  replicaCount: 2
 
   # image: 042889969014.dkr.ecr.us-east-1.amazonaws.com/host_agent:20250909181710   # this value will come from application repo
   imagePullPolicy: IfNotPresent
