@@ -62,8 +62,8 @@ basic-app:
       cpu: "100m"                # Minimum CPU guaranteed
       memory: "512Mi"            # Minimum memory guaranteed
     limits:
-      cpu: "500m"                # Max CPU allowed
-      memory: "1024Mi"            # Max memory allowed
+      cpu: "1000m"                # Max CPU allowed
+      memory: "2048Mi"            # Max memory allowed
 
   ingress:
     enabled: false
