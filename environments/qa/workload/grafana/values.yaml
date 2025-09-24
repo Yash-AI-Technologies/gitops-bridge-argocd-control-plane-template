@@ -25,7 +25,7 @@ basic-app:
 
   ports:
   - name: grafana-svc
-    servicePort: 3000
+    servicePort: 443
     containerPort: 3000
 
   envFrom:
@@ -47,10 +47,10 @@ basic-app:
 
   resources:
     requests:
-      cpu: "30m"                # Minimum CPU guaranteed
-      memory: "300Mi"            # Minimum memory guaranteed
+      cpu: "100m"                # Minimum CPU guaranteed
+      memory: "512Mi"            # Minimum memory guaranteed
     limits:
-      cpu: "60m"                # Max CPU allowed
+      cpu: "1000m"                # Max CPU allowed
       memory: "2048Mi"            # Max memory allowed
 
   ingress:
@@ -58,7 +58,7 @@ basic-app:
     hostname:
       appdomain: grafana
       # domain: prod.yashtechai.link   # cluster set this value at runtime
-    servicePort: 3000
+    servicePort: 443
     className: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod

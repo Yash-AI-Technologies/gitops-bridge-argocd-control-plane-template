@@ -47,11 +47,11 @@ basic-app:
 
   resources:
     requests:
-      cpu: "10m"                # Minimum CPU guaranteed
-      memory: "200Mi"            # Minimum memory guaranteed
+      cpu: "100m"                # Minimum CPU guaranteed
+      memory: "1024Mi"            # Minimum memory guaranteed
     limits:
-      cpu: "50m"                # Max CPU allowed
-      memory: "1024Mi"            # Max memory allowed
+      cpu: "1000m"                # Max CPU allowed
+      memory: "4096Mi"            # Max memory allowed
 
   ingress:
     enabled: true
