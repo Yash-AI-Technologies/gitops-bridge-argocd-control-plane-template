@@ -57,10 +57,10 @@ basic-app:
 
   resources:
     requests:
-      cpu: "10m"                # Minimum CPU guaranteed
-      memory: "500Mi"            # Minimum memory guaranteed
+      cpu: "100m"                # Minimum CPU guaranteed
+      memory: "512Mi"            # Minimum memory guaranteed
     limits:
-      cpu: "50m"                # Max CPU allowed
+      cpu: "500m"                # Max CPU allowed
       memory: "1024Mi"            # Max memory allowed
 
   ingress:
@@ -85,7 +85,7 @@ basic-app:
   autoscaling:
     enabled: true
     minReplicas: 1
-    maxReplicas: 1
+    maxReplicas: 3
     targetCPUUtilizationPercentage: 75
     targetMemoryUtilizationPercentage: 80
 
