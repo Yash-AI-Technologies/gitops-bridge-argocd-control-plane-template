@@ -30,6 +30,8 @@ basic-app:
 
   envFrom:
     - secretRef:
+        name: gemini-config-secret
+    - secretRef:
         name: aws-config-secret
     - secretRef:
         name: middleware-secret
