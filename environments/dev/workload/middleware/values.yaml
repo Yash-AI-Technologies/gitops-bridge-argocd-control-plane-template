@@ -45,6 +45,8 @@ basic-app:
         name: aes-encryption-key-secret
     - secretRef:
         name: otel-config-secret
+    - secretRef:
+        name: gemini-config-secret
   env:
     # - name: "TARGET_API_BASE"
     #   value: "https://hostagent.yashtechai.link"
